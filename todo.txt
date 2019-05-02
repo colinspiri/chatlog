@@ -1,0 +1,7 @@
+TODO
+
+-new message panel
+-make nice-looking CSS
+-figure out how to display messages from with multiple people addressed
+-difference between print and echo in php?
+-white space appears at top after showResults() ?

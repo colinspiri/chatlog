@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chatlog</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div id="controlPanel">
+
+		<div id="checkMessagesToPanel">
+			<p class="panelTitle">Messages To Panel</p>
+			<form action="javascript:sendQuery('checkMessagesTo.php', ['usernameTo']);" method="GET">
+				To: <input type="text" name="username" id="usernameTo"></input><br>
+				<input type="submit"></input>
+			</form>
+		</div>
+
+		<div id="checkMessagesFromPanel">
+			<p class="panelTitle">Messages From Panel</p>
+			<form action="javascript:sendQuery('checkMessagesFrom.php', ['usernameFrom']);" method="GET">
+				From: <input type="text" name="usernameFrom" id="usernameFrom"></input><br>
+				<input type="submit"></input>
+			</form>
+		</div>
+
+		<div id="newMessagePanel">
+			<p class="panelTitle">New Message Panel</p>
+			<form action="javascript:processNewMessageOrSomething();" method="GETorPOSTyourCHOICE">
+				From: <input type="text" name="someName" id="uniqueID"></input><br>
+				To: <input type="text" name="someName" id="uniqueID"></input><br>
+				Subject: <input type="text" name="someName" id="uniqueID"></input><br>
+				Body:<br>
+				<textarea rows=6 cols=30 name="someName" id="uniqueID3"></textarea><br>
+				<input type="submit"></input>
+			</form>
+		</div>
+
+		<div id="newUserPanel">
+			<p class="panelTitle">New User Panel</p>
+			<form action="javascript:sendQuery('newUser.php', ['newUsername', 'newPassword', 'newEmail', 'newFirstName', 'newLastName']);" method="GET">
+				Username: <input type="text" name="newUsername" id="newUsername"></input><br>
+				Password: <input type="text" name="newPassword" id="newPassword"></input><br>
+				Email: <input type="text" name="newEmail" id="newEmail"></input><br>
+				First Name: <input type="text" name="newFirstName" id="newFirstName"></input><br>
+				Last Name: <input type="text" name="newLastName" id="newLastName"></input><br>
+				<input type="submit"></input>
+			</form>
+		</div>
+
+	</div>
+
+	<div id="reportArea">
+		This div is where the content from your AJAX requests will show up.
+	</div>
+
+	<script src="script.js"></script>
+
+</body>
+</html>
