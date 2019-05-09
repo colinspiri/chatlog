@@ -11,10 +11,10 @@ try {
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $fromUsername = $_GET['username'];
-  $toUsername = $_GET['to'];
-  $subject = $_GET['subject'];
-  $body = $_GET['body'];
+  $fromUsername = $_GET['messageUsernameFrom'];
+  $toUsername = $_GET['messageUsernameTo'];
+  $subject = $_GET['messageSubject'];
+  $body = $_GET['messageBody'];
 
   // get fromUserID from users table
   $sql = "SELECT * FROM users WHERE username = '$fromUsername' ";
