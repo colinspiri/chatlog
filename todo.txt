@@ -3,7 +3,6 @@ TODO
 -new message panel
 -make nice-looking CSS
 -figure out how to display messages from with multiple people addressed
--white space appears at top after showResults() ?
-
-Commit Message:
-Added new message panel
+-input validation
+-make form clear after submitting sucessfully
+-format new message reportArea and new user reportArea

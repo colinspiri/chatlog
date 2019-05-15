@@ -9,12 +9,11 @@
 	<div id="page">
 
 		<div id="controlPanel">
-
 			<h1>Control Panel</h1>
 
 			<div id="checkMessagesToPanel">
 				<p class="panelTitle">Check Messages To</p>
-				<form action="javascript:sendQuery('checkMessagesTo.php', ['usernameTo']);" method="GET">
+				<form action="javascript:sendQuery('checkMessagesTo.php', ['usernameTo']);">
 					To: <input type="text" id="usernameTo"></input><br>
 					<input type="submit"></input>
 				</form>
@@ -22,7 +21,7 @@
 
 			<div id="checkMessagesFromPanel">
 				<p class="panelTitle">Check Messages From</p>
-				<form action="javascript:sendQuery('checkMessagesFrom.php', ['usernameFrom']);" method="GET">
+				<form action="javascript:sendQuery('checkMessagesFrom.php', ['usernameFrom']);">
 					From: <input type="text" id="usernameFrom"></input><br>
 					<input type="submit"></input>
 				</form>
@@ -30,7 +29,7 @@
 
 			<div id="newMessagePanel">
 				<p class="panelTitle">Send Message</p>
-				<form action="javascript:sendQuery('newMessage.php', ['messageUsernameFrom', 'messageUsernameTo', 'messageSubject', 'messageBody']);" method="GET">
+				<form action="javascript:sendQuery('newMessage.php', ['messageUsernameFrom', 'messageUsernameTo', 'messageSubject', 'messageBody']);">
 					From: <input type="text" id="messageUsernameFrom"></input><br>
 					To: <input type="text" id="messageUsernameTo"></input><br>
 					Subject: <input type="text" id="messageSubject"></input><br>
@@ -42,7 +41,7 @@
 
 			<div id="newUserPanel">
 				<p class="panelTitle">New User</p>
-				<form action="javascript:sendQuery('newUser.php', ['newUsername', 'newPassword', 'newEmail', 'newFirstName', 'newLastName']);" method="GET">
+				<form action="javascript:sendQuery('newUser.php', ['newUsername', 'newPassword', 'newEmail', 'newFirstName', 'newLastName']);">
 					Username: <input type="text" id="newUsername"></input><br>
 					Password: <input type="text" id="newPassword"></input><br>
 					Email: <input type="text" id="newEmail"></input><br>
@@ -51,12 +50,13 @@
 					<input type="submit"></input>
 				</form>
 			</div>
-
 		</div>
 
 		<div id="contentArea">
-			<h1>Welcome!</h1>
-			<div id="reportArea"></div>
+			<h1>Content Area</h1>
+			<div id="reportArea">
+				<h3>Welcome to your chatlog!</h3>
+			</div>
 		</div>
 
 	</div>

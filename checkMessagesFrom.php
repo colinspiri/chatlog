@@ -18,21 +18,18 @@ try {
   $row = $statement -> fetch();
   $fromUserID = $row['userID'];
   $fromUserFirstName = $row['firstName'];
-  print "<h1> Welcome back, $fromUserFirstName! Here are the messages you have sent to others. </h1>";
+  print "<h2> Welcome back, $fromUserFirstName! Here are the messages you have sent to others. </h2>";
 
   // get messages
   $sql = "SELECT * FROM messages WHERE fromUserID = '$fromUserID' ";
   $statement = $conn -> query( $sql );
 
   print "<style> th, td {border: 1px solid black; padding: 7px;} </style>";
-  print "<table><tr><th>Subject</th><th>Body</th><th>To</th></tr>";
 
   // iterate through message IDs and show the message's information from messages table
+  print "<div class='messageContainer'>";
   foreach ($statement as $row) {
-    // print subject and body
-    print "<tr>";
-    print "<td>" .  $row['subject'] .  "</td>";
-    print "<td>" .  $row['body'] .  "</td>";
+    print "<div class='message'>";
 
     // get toUserIDs from messageID
     $messageID = $row['messageID'];
@@ -45,11 +42,13 @@ try {
       $sqlUsers = "SELECT * FROM users WHERE userID = '$toUserID' ";
       $statementUsers = $conn -> query( $sqlUsers );
       $rowUsers = $statementUsers -> fetch();
-      print "<td>" .  $rowUsers['username'] .  "</td>";
+      print "<div class='person'> To: ".$rowUsers["username"]."</div>";
+      print "<div class='subject'>".$row["subject"]."</div>";
+      print "<div class='body'>".$row["body"]."</div>";
+      print "</div> <br>";
     }
-    print "</tr>";
   }
-  print "</table>";
+  print "</div>";
 }
 catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();

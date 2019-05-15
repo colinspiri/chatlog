@@ -3,14 +3,18 @@ html, body {
   margin: 0px;
   padding: 0px;
 }
+
+#page {
+  height: 100%;
+}
+
 #controlPanel {
-  /* background-color: #F0F010; */
-  background-color: #EEEEEE;
+  background-color: #F0F000;
   height: 100%;
   float: left;
 }
 
-#reportArea {
+#contentArea {
   background-color: #00F0F0;
   height: 100%;
   width: 100%;
@@ -24,7 +28,7 @@ html, body {
 }
 
 /*	NOTE: This, combined with the mods to the input[type=text] CSS, make the
-  fields of the form all line up on the right border (0px from the right)
+fields of the form all line up on the right border (0px from the right)
 */
 #checkMessagesToPanel, #checkMessagesFromPanel, #newUserPanel, #newMessagePanel {
   border: 2px solid black;
@@ -32,11 +36,11 @@ html, body {
 }
 
 /*	This, with the relative positioning of the panels (see above) is
-  one way to get the inputs to line up all nicely and flush against
-  the right hand side of the panels.
-  Position absolute positions elements relative to their nearest
-  positioned ancestor so this is putting items 0px from the right
-  hand side of the panel divs...lines them up nicely.
+one way to get the inputs to line up all nicely and flush against
+the right hand side of the panels.
+Position absolute positions elements relative to their nearest
+positioned ancestor so this is putting items 0px from the right
+hand side of the panel divs...lines them up nicely.
 */
 input[type=text] {
   width: 150px;
