@@ -11,44 +11,46 @@
 		<div id="controlPanel">
 			<h1>Control Panel</h1>
 
-			<div id="checkMessagesToPanel">
-				<p class="panelTitle">Check Messages To</p>
-				<form action="javascript:sendQuery('checkMessagesTo.php', ['usernameTo']);">
-					To: <input type="text" id="usernameTo"></input><br>
-					<input type="submit"></input>
-				</form>
-			</div>
+			<div id="panels">
+				<div id="checkMessagesToPanel">
+					<p class="panelTitle">Check Messages To</p>
+					<form action="javascript:sendQuery('checkMessagesTo.php', ['usernameTo']);">
+						To: <input type="text" id="usernameTo"></input><br>
+						<input type="submit"></input>
+					</form>
+				</div>
 
-			<div id="checkMessagesFromPanel">
-				<p class="panelTitle">Check Messages From</p>
-				<form action="javascript:sendQuery('checkMessagesFrom.php', ['usernameFrom']);">
-					From: <input type="text" id="usernameFrom"></input><br>
-					<input type="submit"></input>
-				</form>
-			</div>
+				<div id="checkMessagesFromPanel">
+					<p class="panelTitle">Check Messages From</p>
+					<form action="javascript:sendQuery('checkMessagesFrom.php', ['usernameFrom']);">
+						From: <input type="text" id="usernameFrom"></input><br>
+						<input type="submit"></input>
+					</form>
+				</div>
 
-			<div id="newMessagePanel">
-				<p class="panelTitle">Send Message</p>
-				<form action="javascript:sendQuery('newMessage.php', ['messageUsernameFrom', 'messageUsernameTo', 'messageSubject', 'messageBody']);">
-					From: <input type="text" id="messageUsernameFrom"></input><br>
-					To: <input type="text" id="messageUsernameTo"></input><br>
-					Subject: <input type="text" id="messageSubject"></input><br>
-					Body:<br>
-					<textarea rows=6 cols=30 id="messageBody"></textarea><br>
-					<input type="submit"></input>
-				</form>
-			</div>
+				<div id="newMessagePanel">
+					<p class="panelTitle">Send Message</p>
+					<form action="javascript:sendQuery('newMessage.php', ['messageUsernameFrom', 'messageUsernameTo', 'messageSubject', 'messageBody']);">
+						From: <input type="text" id="messageUsernameFrom"></input><br>
+						To: <input type="text" id="messageUsernameTo"></input><br>
+						Subject: <input type="text" id="messageSubject"></input><br>
+						Body:<br>
+						<textarea rows=6 cols=30 id="messageBody"></textarea><br>
+						<input type="submit"></input>
+					</form>
+				</div>
 
-			<div id="newUserPanel">
-				<p class="panelTitle">New User</p>
-				<form action="javascript:sendQuery('newUser.php', ['newUsername', 'newPassword', 'newEmail', 'newFirstName', 'newLastName']);">
-					Username: <input type="text" id="newUsername"></input><br>
-					Password: <input type="text" id="newPassword"></input><br>
-					Email: <input type="text" id="newEmail"></input><br>
-					First Name: <input type="text" id="newFirstName"></input><br>
-					Last Name: <input type="text" id="newLastName"></input><br>
-					<input type="submit"></input>
-				</form>
+				<div id="newUserPanel">
+					<p class="panelTitle">New User</p>
+					<form action="javascript:sendQuery('newUser.php', ['newUsername', 'newPassword', 'newEmail', 'newFirstName', 'newLastName']);">
+						Username: <input type="text" id="newUsername"></input><br>
+						Password: <input type="text" id="newPassword"></input><br>
+						Email: <input type="text" id="newEmail"></input><br>
+						First Name: <input type="text" id="newFirstName"></input><br>
+						Last Name: <input type="text" id="newLastName"></input><br>
+						<input type="submit"></input>
+					</form>
+				</div>
 			</div>
 		</div>
 

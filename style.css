@@ -9,14 +9,31 @@ html, body {
   height: 100%;
 }
 
+
+/* CONTROL PANELS */
 #controlPanel {
   background-color: #EEEEEE;
   width: 20%;
   height: 100%;
   padding: 10px;
+  border: 1px solid lightblue;
 }
 #controlPanel h1 {
   text-align: center;
+}
+#panels {
+  display: flex;
+  flex-wrap: wrap;
+}
+#panels div {
+  /* border: 1px solid lightgreen; */
+  margin-bottom: 10px;
+  padding: 20px;
+  width: 100%;
+  transition: all 1s ease;
+}
+#panels div:hover {
+  padding: 20px;
 }
 .panelTitle {
   color: black;
@@ -31,6 +48,8 @@ input[type=text] {
   right: 10px;
 }
 
+
+/* CONTENT AREA */
 #contentArea {
   background-color: #d8fcfc;
   height: 100%;

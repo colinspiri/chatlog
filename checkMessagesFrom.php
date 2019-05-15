@@ -37,16 +37,18 @@ try {
     $statementRecipients = $conn -> query( $sqlRecipients );
 
     // for each userID, print username
+    print "<div class='person'> To: ";
     foreach ($statementRecipients as $rowRecipients) {
       $toUserID = $rowRecipients['toUserID'];
       $sqlUsers = "SELECT * FROM users WHERE userID = '$toUserID' ";
       $statementUsers = $conn -> query( $sqlUsers );
       $rowUsers = $statementUsers -> fetch();
-      print "<div class='person'> To: ".$rowUsers["username"]."</div>";
-      print "<div class='subject'>".$row["subject"]."</div>";
-      print "<div class='body'>".$row["body"]."</div>";
-      print "</div> <br>";
+      print $rowUsers['username']."<br>";
     }
+    print "</div>";
+    print "<div class='subject'>".$row["subject"]."</div>";
+    print "<div class='body'>".$row["body"]."</div>";
+    print "</div> <br>";
   }
   print "</div>";
 }
