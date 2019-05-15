@@ -45,7 +45,7 @@ try {
     $usersRow = $usersStatement -> fetch();
     // format response
     print "<div class='message'>";
-    print "<div class='person'> From: ".$usersRow["username"]."</div>";
+    print "<div class='person'>".$usersRow["username"]." &#8594; </div>";
     print "<div class='subject'>".$messagesRow["subject"]."</div>";
     print "<div class='body'>".$messagesRow["body"]."</div>";
     print "</div> <br>";

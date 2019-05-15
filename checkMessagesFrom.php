@@ -41,13 +41,13 @@ try {
     $statementRecipients = $conn -> query( $sqlRecipients );
 
     // for each userID, print username
-    print "<div class='person'> To: ";
+    print "<div class='person'> ";
     foreach ($statementRecipients as $rowRecipients) {
       $toUserID = $rowRecipients['toUserID'];
       $sqlUsers = "SELECT * FROM users WHERE userID = '$toUserID' ";
       $statementUsers = $conn -> query( $sqlUsers );
       $rowUsers = $statementUsers -> fetch();
-      print $rowUsers['username']."<br>";
+      print "&#8594; ".$rowUsers['username']."<br>";
     }
     print "</div>";
     print "<div class='subject'>".$row["subject"]."</div>";
