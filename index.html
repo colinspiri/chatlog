@@ -14,7 +14,7 @@
 			<div id="panels">
 				<div id="checkMessagesToPanel">
 					<p class="panelTitle">Check Messages To</p>
-					<form action="javascript:sendQuery('checkMessagesTo.php', ['usernameTo']);">
+					<form id="checkMessagesToForm" action="javascript:sendQuery('checkMessagesToForm', 'checkMessagesTo.php', ['usernameTo']);">
 						To: <input type="text" id="usernameTo"></input><br>
 						<input type="submit"></input>
 					</form>
@@ -22,7 +22,7 @@
 
 				<div id="checkMessagesFromPanel">
 					<p class="panelTitle">Check Messages From</p>
-					<form action="javascript:sendQuery('checkMessagesFrom.php', ['usernameFrom']);">
+					<form id="checkMessagesFromForm" action="javascript:sendQuery('checkMessagesFromForm', 'checkMessagesFrom.php', ['usernameFrom']);">
 						From: <input type="text" id="usernameFrom"></input><br>
 						<input type="submit"></input>
 					</form>
@@ -30,7 +30,7 @@
 
 				<div id="newMessagePanel">
 					<p class="panelTitle">Send Message</p>
-					<form action="javascript:sendQuery('newMessage.php', ['messageUsernameFrom', 'messageUsernameTo', 'messageSubject', 'messageBody']);">
+					<form id="newMessageForm" action="javascript:sendQuery('newMessageForm', 'newMessage.php', ['messageUsernameFrom', 'messageUsernameTo', 'messageSubject', 'messageBody']);">
 						From: <input type="text" id="messageUsernameFrom"></input><br>
 						To: <input type="text" id="messageUsernameTo"></input><br>
 						Subject: <input type="text" id="messageSubject"></input><br>
@@ -42,7 +42,7 @@
 
 				<div id="newUserPanel">
 					<p class="panelTitle">New User</p>
-					<form action="javascript:sendQuery('newUser.php', ['newUsername', 'newPassword', 'newEmail', 'newFirstName', 'newLastName']);">
+					<form id="newUserForm" action="javascript:sendQuery('newUserForm', 'newUser.php', ['newUsername', 'newPassword', 'newEmail', 'newFirstName', 'newLastName']);">
 						Username: <input type="text" id="newUsername"></input><br>
 						Password: <input type="text" id="newPassword"></input><br>
 						Email: <input type="text" id="newEmail"></input><br>

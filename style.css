@@ -16,7 +16,6 @@ html, body {
   width: 20%;
   height: 100%;
   padding: 10px;
-  border: 1px solid lightblue;
 }
 #controlPanel h1 {
   text-align: center;
@@ -26,7 +25,6 @@ html, body {
   flex-wrap: wrap;
 }
 #panels div {
-  /* border: 1px solid lightgreen; */
   margin-bottom: 10px;
   padding: 20px;
   width: 100%;

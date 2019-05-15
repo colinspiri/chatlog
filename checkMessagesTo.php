@@ -18,6 +18,10 @@ try {
   $row = $statement -> fetch();
   $toUserID = $row['userID'];
   $toUserFirstName = $row['firstName'];
+  if($toUserFirstName == "") {
+    print "<h2> No user found with username '".$toUsername."'. </h2>";
+    return;
+  }
   print "<h2> Welcome back, $toUserFirstName! Here are the messages others have left for you. </h2>";
 
   // get messageIDs

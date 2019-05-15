@@ -13,7 +13,7 @@ function validateInput(elements) {
   return true;
 }
 
-function sendQuery(filename, elements) {
+function sendQuery(formID, filename, elements) {
   let valid = validateInput(elements);
   if(!valid) return;
 
@@ -22,8 +22,9 @@ function sendQuery(filename, elements) {
     if(i != 0) url += "&";
     url += elements[i] + "=" + document.getElementById(elements[i]).value;
   }
-  console.log("Query sent to", url);
   httpGetAsync(url, showResults);
+  console.log("Query sent to", url);
+  document.getElementById(formID).reset();
 }
 
 function httpGetAsync(theUrl, callbackFunctionWhenPageLoaded) {
