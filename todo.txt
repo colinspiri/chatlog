@@ -1,5 +1,6 @@
 TODO
 
--input validation
+-make able to send messages to more than one person
+-input validation near the form, not in contentArea
 -make form clear after submitting sucessfully
 -format new message reportArea and new user reportArea

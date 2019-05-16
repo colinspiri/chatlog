@@ -12,7 +12,8 @@ html, body {
 
 /* CONTROL PANELS */
 #controlPanel {
-  background-color: #EEEEEE;
+  background-color: #FEFCAD;
+  color: #223843;
   width: 20%;
   height: 100%;
   padding: 10px;
@@ -26,11 +27,10 @@ html, body {
 }
 #panels div {
   margin-bottom: 5px;
-  padding: 0px 20px;
+  padding: 0px 30px;
   width: 100%;
 }
 .panelTitle {
-  color: black;
   font-size: 20px;
   text-align: center;
 }
@@ -39,42 +39,65 @@ html, body {
 }
 input[type=text] {
   position: absolute;
+  background-color: #f4f1f0;
   right: 10px;
+}
+textarea {
+  background-color: #f4f1f0;
+}
+input[type=submit] {
+  margin-top: 5px;
+  float: right;
+  background-color: #F2DFD7;
 }
 
 
 /* CONTENT AREA */
 #contentArea {
   background-color: #d8fcfc;
+  color: #223843;
   height: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   width: 85%;
 }
 .messageContainer {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-around;
 }
 .message {
   padding: 10px;
-  margin: 10px;
-  width: 15%;
-  border: 2px solid #fff78c;
-  transition: all 0.3s ease;
+  margin: 20px;
+  width: 20%;
+  max-height: 200px;
+  overflow: auto;
+  position: relative;
+  border: 7px double #E4572E;
+  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);;
 }
 .message:hover {
   width: 25%;
+  max-height: inherit;
 }
 .person {
   font-style: italic;
   text-align: right;
+  margin: 0px 100% 0px 0px;
+  margin-right: 20%;
+  margin-bottom: 8px;
+  transition: all 0.8s ease;
+}
+.message:hover .person {
+  margin-right: 0px;
 }
 .subject {
+  color: black;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: bolder;
   margin-bottom: 10px;
   text-align: center;
-  transition: all 0.4s ease;
+  transition: all 0.25s ease;
 }
 .message:hover .subject {
   margin-bottom: 20px;

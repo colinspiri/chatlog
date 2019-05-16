@@ -47,12 +47,12 @@ try {
       $sqlUsers = "SELECT * FROM users WHERE userID = '$toUserID' ";
       $statementUsers = $conn -> query( $sqlUsers );
       $rowUsers = $statementUsers -> fetch();
-      print "&#8594; ".$rowUsers['username']."<br>";
+      print "you &#8594; ".$rowUsers['username']."<br>";
     }
     print "</div>";
     print "<div class='subject'>".$row["subject"]."</div>";
     print "<div class='body'>".$row["body"]."</div>";
-    print "</div> <br>";
+    print "</div>";
   }
   print "</div>";
 }
