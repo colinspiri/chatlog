@@ -27,8 +27,7 @@ try {
   // get messages
   $sql = "SELECT * FROM messages WHERE fromUserID = '$fromUserID' ";
   $statement = $conn -> query( $sql );
-  $firstRow = $statement -> fetch();
-  if(empty($firstRow)) {
+  if($statement -> rowCount() == 0) {
     print "<br> <br> <h3> It looks like you haven't sent any messages yet. Boo. </h3>";
     return;
   }

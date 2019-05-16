@@ -27,13 +27,12 @@ try {
   // get messageIDs
   $sql = "SELECT * FROM messageRecipients WHERE toUserID = '$toUserID' ";
   $statement = $conn -> query( $sql );
-  $firstRow = $statement -> fetch();
-  if(empty($firstRow)) {
+  if($statement -> rowCount() == 0) {
     print "<br> <br> <h3> It looks like you haven't recieved any messages yet. Lame. </h3>";
     return;
   }
   else {
-    print "<h3> Here are the messages others have sent to you. </h3>";
+    print "<h3> Here are the messages you have recieved. </h3>";
   }
 
   // iterate through message IDs and show the message's information from messages table
