@@ -22,13 +22,19 @@ try {
     print "<h2> No user found with username '".$fromUsername."'. </h2>";
     return;
   }
-  print "<h2> Welcome back, $fromUserFirstName! Here are the messages you have sent to others. </h2>";
+  print "<h2> Welcome back, $fromUserFirstName! </h2>";
 
   // get messages
   $sql = "SELECT * FROM messages WHERE fromUserID = '$fromUserID' ";
   $statement = $conn -> query( $sql );
-
-  print "<style> th, td {border: 1px solid black; padding: 7px;} </style>";
+  $firstRow = $statement -> fetch();
+  if(empty($firstRow)) {
+    print "<br> <br> <h3> It looks like you haven't sent any messages yet. Boo. </h3>";
+    return;
+  }
+  else {
+    print "<h3> Here are the messages you have sent to others. </h3>";
+  }
 
   // iterate through message IDs and show the message's information from messages table
   print "<div class='messageContainer'>";

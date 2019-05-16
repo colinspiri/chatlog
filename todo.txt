@@ -2,5 +2,7 @@ TODO
 
 -make able to send messages to more than one person
 -input validation near the form, not in contentArea
--make form clear after submitting sucessfully
--format new message reportArea and new user reportArea
+-maybe make sidebar collapsable
+
+Bugs/Issues:
+-users goldace and vsaucemichael don't show "no messages" but also don't show the messages in db

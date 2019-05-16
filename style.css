@@ -74,7 +74,7 @@ input[type=submit] {
   overflow: auto;
   position: relative;
   border: 7px double #E4572E;
-  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);;
+  transition: all 0.5s ease;
 }
 .message:hover {
   width: 25%;

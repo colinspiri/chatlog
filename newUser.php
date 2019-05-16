@@ -17,8 +17,8 @@ try {
   $last = $_GET['newLastName'];
   $email = $_GET['newEmail'];
   $sql = "INSERT INTO users (username, password, firstName, lastName, email) VALUES('$username', '$password', '$first', '$last', '$email')";
-  print "<h1> Welcome! </h1>";
-  print "<h3> Thank you, $first. You will be hearing from us soon. </h3>";
+  print "<h2> Welcome! </h2>";
+  print "<h3> Thank you, $first. You will be hearing from us soon. Next, try sending a message. </h3>";
   $conn -> exec( $sql );
 }
 catch(PDOException $e) {

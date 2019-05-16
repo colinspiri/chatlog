@@ -38,8 +38,15 @@ try {
 
   // insert into messageRecipients table
   $sql = "INSERT INTO messageRecipients (messageID, toUserID) VALUES('$messageID', '$toUserID')";
-  $conn -> exec( $sql );
-  print "<h1> Successfully transmitted message to $toUsername. </h1>";
+  $conn -> exec($sql);
+  print "<h2> Successfully transmitted the following message: </h2>";
+
+  // format message
+  print "<div class='messageContainer'> <div class='message'>";
+  print "<div class='person'> $fromUsername &#8594 $toUsername</div>";
+  print "<div class='subject'> $subject </div>";
+  print "<div class='body'> $body </div>";
+  print "</div> </div>";
 
 }
 catch(PDOException $e) {
