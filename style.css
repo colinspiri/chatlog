@@ -1,8 +1,9 @@
-html, body {
-  height: 100%;
-  padding: 0px;
-  margin: 0px;
+* {
   box-sizing: border-box;
+}
+html, body {
+  margin: 0px;
+  height: 150%;
 }
 #page {
   display: flex;
@@ -12,9 +13,9 @@ html, body {
 
 /* CONTROL PANELS */
 #controlPanel {
-  background-color: #FEFCAD;
-  color: #223843;
-  width: 20%;
+  background-color: white;
+  color: black;
+  width: 22%;
   height: 100%;
   padding: 10px;
 }
@@ -32,23 +33,56 @@ html, body {
 }
 .panelTitle {
   font-size: 20px;
-  text-align: center;
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #222;
 }
-#checkMessagesToPanel, #checkMessagesFromPanel, #newUserPanel, #newMessagePanel {
-  position: relative;
+form {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #444;
+  font-family: sans-serif;
 }
-input[type=text] {
-  position: absolute;
-  background-color: #f4f1f0;
-  right: 10px;
+input, textarea {
+  background-color: white;
+  border: 1px solid #CCC;
+  margin-top: 5px;
+  width: 100%;
+  border-bottom: 3px solid #ADD8E6;
+  outline: none;
+  transition: all 0.3s ease;
 }
-textarea {
-  background-color: #f4f1f0;
+input:not(:focus):invalid, textarea:not(:focus):invalid {
+  border-bottom: 3px solid #E63462;
+  outline: none;
+}
+input:hover, textarea:hover {
+  border-bottom: 3px solid #FFD700;
+}
+input:focus, textarea:focus {
+  border-bottom: 3px solid #FFD700;
+}
+
+input {
+  display: block;
 }
 input[type=submit] {
-  margin-top: 5px;
-  float: right;
-  background-color: #F2DFD7;
+  margin: 5px auto;
+  width: 50%;
+  height: 25px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 10px;
+  border-color: #45d5d5;
+  background-color: #45d5d5;
+  color: white;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+input[type=submit]:hover {
+  background-color: white;
+  color: #45d5d5;
 }
 
 
@@ -73,7 +107,7 @@ input[type=submit] {
   max-height: 200px;
   overflow: auto;
   position: relative;
-  border: 7px double #E4572E;
+  border: 7px double #E63462;
   transition: all 0.5s ease;
 }
 .message:hover {

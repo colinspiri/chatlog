@@ -1,5 +1,6 @@
 "use strict"
 
+// Note to Maunu: this method used to do stuff, but then I discovered the "required" keyword for html forms; I've just left it here for your enjoyment, but it doesn't ever get called
 function validateInput(elements) {
   for(let i = 0; i < elements.length; i++) {
     let field = elements[i];
@@ -14,13 +15,15 @@ function validateInput(elements) {
 }
 
 function sendQuery(formID, filename, elements) {
-  let valid = validateInput(elements);
-  if(!valid) return;
+  // See note on line 3
+  // let valid = validateInput(elements);
+  // if(!valid) return;
 
   let url = filename + "?"
   for(let i = 0; i < elements.length; i++) {
     if(i != 0) url += "&";
-    url += elements[i] + "=" + document.getElementById(elements[i]).value;
+    let key = elements[i];
+    url += key + "=" + document.getElementById(key).value;
   }
   httpGetAsync(url, showResults);
   console.log("Query sent to", url);

@@ -12,41 +12,44 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   $fromUsername = $_GET['messageUsernameFrom'];
-  $toUsername = $_GET['messageUsernameTo'];
+  $toUsernames = explode(",", $_GET['messageUsernameTo']);
   $subject = $_GET['messageSubject'];
   $body = $_GET['messageBody'];
 
-  // get fromUserID from users table
-  $sql = "SELECT * FROM users WHERE username = '$fromUsername' ";
-  $statement = $conn -> query($sql);
-  $row = $statement -> fetch();
-  $fromUserID = $row['userID'];
-  // print "<h1> fromUserID: $fromUserID </h1>";
+  foreach($toUsernames as $toUsername) {
 
-  // insert into messages table
-  $sql = "INSERT INTO messages (subject, body, fromUserID) VALUES('$subject', '$body', '$fromUserID')";
-  $conn -> exec( $sql );
-  $messageID = $conn -> lastInsertId();
-  // print "<h1> messageID: $messageID </h1>";
+    // get fromUserID from users table
+    $sql = "SELECT * FROM users WHERE username = '$fromUsername' ";
+    $statement = $conn -> query($sql);
+    $row = $statement -> fetch();
+    $fromUserID = $row['userID'];
+    // print "<h1> fromUserID: $fromUserID </h1>";
 
-  // get toUserID from users table
-  $sql = "SELECT * FROM users WHERE username = '$toUsername' ";
-  $statement = $conn -> query($sql);
-  $row = $statement -> fetch();
-  $toUserID = $row['userID'];
-  // print "<h1> toUserID: $toUserID </h1>";
+    // insert into messages table
+    $sql = "INSERT INTO messages (subject, body, fromUserID) VALUES('$subject', '$body', '$fromUserID')";
+    $conn -> exec( $sql );
+    $messageID = $conn -> lastInsertId();
+    // print "<h1> messageID: $messageID </h1>";
 
-  // insert into messageRecipients table
-  $sql = "INSERT INTO messageRecipients (messageID, toUserID) VALUES('$messageID', '$toUserID')";
-  $conn -> exec($sql);
-  print "<h2> Successfully transmitted the following message: </h2>";
+    // get toUserID from users table
+    $sql = "SELECT * FROM users WHERE username = '$toUsername' ";
+    $statement = $conn -> query($sql);
+    $row = $statement -> fetch();
+    $toUserID = $row['userID'];
+    // print "<h1> toUserID: $toUserID </h1>";
 
-  // format message
-  print "<div class='messageContainer'> <div class='message'>";
-  print "<div class='person'> $fromUsername &#8594 $toUsername</div>";
-  print "<div class='subject'> $subject </div>";
-  print "<div class='body'> $body </div>";
-  print "</div> </div>";
+    // insert into messageRecipients table
+    $sql = "INSERT INTO messageRecipients (messageID, toUserID) VALUES('$messageID', '$toUserID')";
+    $conn -> exec($sql);
+    print "<h2> Successfully transmitted the following message: </h2>";
+
+    // format message
+    print "<div class='messageContainer'> <div class='message'>";
+    print "<div class='person'> $fromUsername &#8594 $toUsername</div>";
+    print "<div class='subject'> $subject </div>";
+    print "<div class='body'> $body </div>";
+    print "</div> </div>";
+  }
 
 }
 catch(PDOException $e) {
